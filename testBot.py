@@ -30,23 +30,23 @@ def commands_request(conn, mess):
         elif text == '!addol':
             conn.send(xmpp.Message(user, requesDB.add_order_log()))
         elif text == '!delol':
-            conn.send(xmpp.Message(user, requesDB.del_order_log()))
+            conn.send(xmpp.Message(user, requesDB.del_order_log(arguments[0])))
         elif text == '!addc':
-            conn.send(xmpp.Message(user, requesDB.add_car()))
+            conn.send(xmpp.Message(user, requesDB.add_car(arguments[0])))
         elif text == '!cc':
-            conn.send(xmpp.Message(user, requesDB.change_car()))
+            conn.send(xmpp.Message(user, requesDB.change_car(arguments[0])))
         elif text == '!gup':
-            conn.send(xmpp.Message(user, requesDB.get_upcoming_orders()))
+            conn.send(xmpp.Message(user, requesDB.get_upcoming_orders(arguments[0])))
         elif text == '!ac':
-            conn.send(xmpp.Message(user, requesDB.actuality_check()))
+            conn.send(xmpp.Message(user, requesDB.actuality_check(arguments[0])))
         elif text == '!ico':
-            conn.send(xmpp.Message(user, requesDB.insert_current_order()))
+            conn.send(xmpp.Message(user, requesDB.insert_current_order(arguments[0])))
         elif text == '!dco':
-            conn.send(xmpp.Message(user, requesDB.del_current_order()))
+            conn.send(xmpp.Message(user, requesDB.del_current_order(arguments[0])))
         elif text == '!uco':
-            conn.send(xmpp.Message(user, requesDB.update_current_order()))
+            conn.send(xmpp.Message(user, requesDB.update_current_order(arguments[0])))
         elif text == '!cs':
-            conn.send(xmpp.Message(user, requesDB.change_status()))
+            conn.send(xmpp.Message(user, requesDB.change_status(arguments[0])))
         else:
             conn.send(xmpp.Message(user, "Такой команды нет"))
 
